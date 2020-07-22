@@ -1,0 +1,15 @@
+<div class="form-container d-flex justify-content-around">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Keyword" aria-label="Keyword" [(ngModel)]="keyword">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="searchPhotos()">Search</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="card-columns">
+        <div class="card" *ngFor="let photo of photoList">
+            <img alt="{{photo.title}}" [src]="getPhotoURL(photo)" />
+        </div>
+    </div>
+</div>
