@@ -21,6 +21,7 @@ export class PhotoShowComponent implements OnInit {
 
   searchPhotos() {
     if(!this.keyword){
+      this.photoList = undefined;
       this.snackBar.open('Please provide a keyword', 'Close', { duration: 2000 });
       return;
     }

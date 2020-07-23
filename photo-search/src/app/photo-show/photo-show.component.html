@@ -1,15 +1,14 @@
-<div class="form-container d-flex justify-content-around">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Keyword" aria-label="Keyword" [(ngModel)]="keyword">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" (click)="searchPhotos()">Search</button>
-        </div>
+<div class="container">
+    <div class="d-flex justify-content-center mt-2 mb-4">
+        <form class="form-inline">
+            <input type="text" class="form-control mr-2" placeholder="Keyword" name="Keyword" aria-label="Keyword"
+                [(ngModel)]="keyword">
+            <button class="btn btn-outline-secondary" type="submit" (click)="searchPhotos()">Search</button>
+        </form>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="card-columns">
-        <div class="card" *ngFor="let photo of photoList">
-            <img alt="{{photo.title}}" [src]="getPhotoURL(photo)" />
+    <div class="container-fluid scroll">
+        <div class="row" *ngFor="let photo of photoList">
+            <img class="col-xl-12 pb-3" [src]="getPhotoURL(photo)" alt="{{photo.title}}">
         </div>
     </div>
 </div>
