@@ -1,5 +1,30 @@
+.form-container {
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .form-container {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+  }
+
 .scroll {
     overflow-y: auto;
-    height: 80vh;
+    height: 70vh;
     background-color: #FFFFFF;
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
 }

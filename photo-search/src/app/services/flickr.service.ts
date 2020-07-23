@@ -13,11 +13,12 @@ export class FlickrService {
       method: 'flickr.photos.search',
       api_key : 'b7f804b89b47a2cf77fd588148b42344',
       sort: "relevance",
-      safe_search : '3',
+      safe_search : '1',
       media: 'photos',
       format : 'json',
       nojsoncallback: '1',
-      per_page : '25'
+      per_page : '25',
+      content_type: '1'
     }
   }
 
