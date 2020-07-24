@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./photo-show.component.css']
 })
 export class PhotoShowComponent implements OnInit {
-  public keyword: string;
+  public keywords: string;
   public photoList;
 
   constructor(
@@ -20,12 +20,12 @@ export class PhotoShowComponent implements OnInit {
   }
 
   searchPhotos() {
-    if(!this.keyword){
+    if(!this.keywords.trim()){
       this.photoList = undefined;
-      this.snackBar.open('Please provide a keyword', 'Close', { duration: 2000 });
+      this.snackBar.open('Please provide keywords', 'Close', { duration: 2000 });
       return;
     }
-    this.flickrService.searchPhotos(this.keyword).subscribe((result: any) =>{
+    this.flickrService.searchPhotos(this.keywords).subscribe((result: any) =>{
       this.photoList = result.photos.photo;
     });
   }

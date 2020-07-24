@@ -18,7 +18,8 @@ export class FlickrService {
       format : 'json',
       nojsoncallback: '1',
       per_page : '25',
-      content_type: '1'
+      content_type: '1',
+      privacy_filter : '1'
     }
   }
 
@@ -26,8 +27,8 @@ export class FlickrService {
     private httpClient: HttpClient
   ) { }
 
-  searchPhotos (keyword: string){
-    this.flickrArgs.params['text'] = keyword;
+  searchPhotos (keywords: string){
+    this.flickrArgs.params['text'] = keywords;
     return this.httpClient.get(this.FLICKR_URL, this.flickrArgs);
   }
 
